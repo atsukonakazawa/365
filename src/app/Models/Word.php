@@ -9,5 +9,12 @@ class Word extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['word'];
+    protected $fillable = [
+        'word'
+    ];
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
 }

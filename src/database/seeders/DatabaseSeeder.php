@@ -13,6 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        //１回目のシード
         $this->call(WordsTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
     }
 }

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\FavoriteController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +17,13 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-
+/*ログイン前*/
 Route::get('/',[HomeController::Class,'home']);
 Route::get('/look/today',[HomeController::class,'today'])->name("look.today");
+
+/*ログイン後（ホーム画面、今日の言葉画面）*/
+Route::get('/index',[MainController::Class,'index']);
+Route::get('/index/today',[MainController::class,'indexToday'])->name("index.today");
+
+/*ログイン後（お気に入り関係）*/
+Route::get('/index/favorite',[FavoriteController::class,'indexFavorite'])->name("index.favorite");
